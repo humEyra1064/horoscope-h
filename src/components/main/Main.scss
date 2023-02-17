@@ -12,8 +12,10 @@
         height: 350px;
         position: relative;
         overflow: hidden;
+        // kartın üzerindeki yazıda taşan kısmı gösterme
         &:hover .card-over{
             transform: translateY(0%);
+            //card üstüne gelince açıklama y ekseninde yüzde sıfıra gelsin
         }
         &:hover img{
             opacity: 1;
@@ -23,6 +25,7 @@
             position: absolute;
             top: 0;
             left:0;
+            //en sola sabitlemek için👆
             background-color: rgba(0,0,0,0.8);
             color: $cardNavBgColor;
             padding: 1rem;
@@ -35,6 +38,7 @@
             top: 50%;
             left:50%;
             transform: translate(-50%, -50%);
+            //tam ortaya almak için👆
             background-color: rgba(0,0,0,0.8);
             color: $cardNavBgColor;
             padding: 1rem;
@@ -46,6 +50,7 @@
             width: 500px;
             height: 350px;
             object-fit: cover;
+            //genişlik ve yükseklik değiştiğinde foto bozulmaması için.
             border-radius: 10px;
             opacity: 0.5;
         }
@@ -59,15 +64,19 @@
             padding: 1rem;
             border-radius: 10px;
             transform: translateY(100%);
+            //100de 100 aşağı kaydırır👆
             transition: transform 0.7s ease-in-out;
             z-index: 3;
+
             max-height: 75%;
             text-align: justify;
             overflow: auto;
+            //açıklama cardın %75ine kadar gelsin ve yazı sığmazsa overflow ile otomatik sığdırsın👆
 
             &::-webkit-scrollbar{
                 display: none;
             }
+            //scrol gözükmesin
         }
     }
 }
